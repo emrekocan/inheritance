@@ -1,0 +1,30 @@
+class Calisan():
+    def __init__(self,isim,maas,departman):
+        print("Çalışan Sınıfının Yapıcı Fonksiyonu")
+        self.isim = isim
+        self.maas = maas
+        self.departman = departman
+    def bilgilerigoster(self):
+        print("Çalışan sınıfının bilgileri gösteriliyor...")
+        print("İsim: ",self.isim,"Maaş: ",self.maas,"Çalıştığı departman: ",self.departman)
+    def maasazamyap(self,zam_miktarı):
+        print("Maaşa zam yapıldı..")
+        self.maas += zam_miktarı
+    def departmandegistir(self,yeni_departman):
+        print("Departman degistiriliyor..")
+        self.departman = yeni_departman
+
+class Yonetici(Calisan):
+    def __init__(self,isim,maas,departman,kisi_sayisi):
+        print("Yönetici sınıfının yapıcı fonksiyonu")
+        super().__init__(isim,maas,departman)
+
+        self.kisi_sayisi = kisi_sayisi
+    def bilgilerigoster(self):
+        print("Yönetici sınıfının bilgileri gösteriliyor..")
+        print("İsim:",self.isim,"Maaş:",self.maas,"Çalıştığı Departman:",self.departman,"Kişi Sayısı:",self.kisi_sayisi)
+
+
+yonetici = Yonetici("Emre Koçan",2500,"Yazılım",20)
+
+yonetici.bilgilerigoster()
